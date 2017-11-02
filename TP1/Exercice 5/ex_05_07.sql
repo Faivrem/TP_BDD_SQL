@@ -1,0 +1,5 @@
+SELECT 
+  COUNT(DISTINCT MANAGER_ID) AS "Number of Managers"
+FROM 
+  EMPLOYEES
+;

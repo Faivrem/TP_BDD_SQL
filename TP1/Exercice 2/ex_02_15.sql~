@@ -1,0 +1,9 @@
+SELECT 
+  LAST_NAME AS "Employee",
+  SALARY AS "Monthly Salary",
+  COMMISSION_PCT
+FROM
+  EMPLOYEES
+WHERE
+  COMMISSION_PCT = 0.2
+;
