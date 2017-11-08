@@ -1,0 +1,23 @@
+CREATE TABLE EMPLOYEES2 (ID,FIRST_NAME,LAST_NAME,SALARY,DEPT_ID)
+AS 
+SELECT 
+EMPLOYEE_ID,
+FIRST_NAME,
+LAST_NAME,
+SALARY,
+DEPARTMENT_ID
+FROM EMPLOYEES
+;
+
+alter table
+   EMPLOYEES2
+add constraint
+   emp2_dept_id_fk FOREIGN KEY (DEPT_ID) references DEPT (ID);
+  
+alter table
+   EMPLOYEES2
+add constraint
+   emp2_emp_id_pk PRIMARY KEY (ID);
+
+   
+  
