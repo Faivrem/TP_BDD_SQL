@@ -1,0 +1,4 @@
+INSERT INTO DEPT (ID,NAME) VALUES (DEPT_ID_SEQ.NEXTVAL,'Education');
+INSERT INTO DEPT (ID,NAME) VALUES (DEPT_ID_SEQ.NEXTVAL,'Administration');
+
+select * from dept;
