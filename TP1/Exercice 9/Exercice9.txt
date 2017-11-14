@@ -1,0 +1,67 @@
+==> ex_09_01.sql <==
+CREATE TABLE MY_EMPLOYEE (
+ id number(4) not null,
+ last_name varchar2(25) null,
+ first_name varchar2(25) null,
+ userid varchar2(8) null,
+ salary number(9,2) null
+ --CONSTRAINT my_employee_id_pk primary key(id)
+);
+
+
+==> ex_09_02.sql <==
+INSERT INTO MY_EMPLOYEE VALUES (1,'Patel','Ralph','rpatel',895);
+INSERT INTO MY_EMPLOYEE VALUES (2,'Dancs','Betty','bdancs',860);
+INSERT INTO MY_EMPLOYEE VALUES (3,'Biri','Ben','bbiri',1100);
+INSERT INTO MY_EMPLOYEE VALUES (4,'Newman','Chad','cnewman',750);
+INSERT INTO MY_EMPLOYEE VALUES (5,'Ropeburn','Audrey','aropebur',1550);
+
+==> ex_09_03.sql <==
+INSERT INTO MY_EMPLOYEE (ID,LAST_NAME,FIRST_NAME,USERID,SALARY) VALUES (2,'Dancs','Betty','bdancs',860);
+==> ex_09_04.sql <==
+select * from MY_EMPLOYEE;
+==> ex_09_05.sql <==
+INSERT INTO MY_EMPLOYEE (ID,LAST_NAME,FIRST_NAME,USERID,SALARY) VALUES (&ID,'&LAST_NAME','&FIRST_NAME','&USERID',&SALARY);
+==> ex_09_06.sql <==
+-- Utiliser le script 5
+==> ex_09_07.sql <==
+select * from MY_EMPLOYEE;
+==> ex_09_08.sql <==
+select * from my_employee;
+
+delete from MY_EMPLOYEE where id = 6;
+
+==> ex_09_09.sql <==
+update my_employee set last_name = 'Drexler' where id = 3;
+
+==> ex_09_10.sql <==
+update my_employee set salary = 1000 where salary < 900;
+
+select * from my_employee;
+==> ex_09_11.sql <==
+delete from MY_EMPLOYEE where last_name = 'Dancs' and first_name = 'Betty';
+==> ex_09_13.sql <==
+COMMIT;
+==> ex_09_14.sql <==
+SELECT * FROM MY_EMPLOYEE;
+==> ex_09_15.sql <==
+SAVEPOINT save_point_1;
+==> ex_09_16.sql <==
+DELETE FROM MY_EMPLOYEE;
+==> ex_09_17.sql <==
+select * from my_employee;
+==> ex_09_18.sql <==
+ROLLBACK;
+==> ex_09_19.sql <==
+SELECT * FROM MY_EMPLOYEE;
+==> ex_09_20.sql <==
+COMMIT;
+==> ex_09_21.sql <==
+INSERT INTO MY_EMPLOYEE (ID,LAST_NAME,FIRST_NAME,USERID,SALARY) 
+VALUES (&ID,'&&LAST_NAME','&&FIRST_NAME',LOWER(concat(SUBSTR('&FIRST_NAME',1,1),SUBSTR('&LAST_NAME',1,7))),&SALARY);
+
+UNDEFINE LAST_NAME;
+UNDEFINE FIRST_NAME;
+
+--Q 26 
+select * from my_employee;
